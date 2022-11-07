@@ -2,41 +2,32 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 html {
     font-family: 'Kumbh Sans', sans-serif;
-    height: 100%;
-    display: grid;
-    position: relative;
+    font-size: 18px;
 }
 
 body {
-    position: relative;
-    background-color: hsl(185, 75%, 39%);
-    height: 100%;
+    height: 100vh;
     display: grid;
-    max-width: 375px;
-}
-
-.bg-pattern-top {
-    position: absolute;
-    top: -75%;
-    left: -150%;
-}
-
-.bg-pattern-bottom {
-    position: absolute;
-    bottom: -75%;
-    right: -150%;
+    place-items: center;
+    background: url(./images/bg-pattern-top.svg) left -40vw top -20vw no-repeat,
+        url(./images/bg-pattern-bottom.svg) right -60vw bottom -30vw no-repeat, hsl(185, 75%, 39%);
+    background-size: 100vw, 100vw;
+        
+    
 }
 
 /*main style*/
 
 .main {
+    margin: auto;
     max-width: 326px;
     background-color: white;
-    margin: auto 25px;
+    margin: auto;
     overflow: hidden;
     border-radius: 15px;
     display: flex;
@@ -44,8 +35,62 @@ body {
     align-items: center;
 }
 
+.portrait {
+    border: 10px solid white;
+    border-radius: 50%;
+    position: relative;
+    top: -50px;
+    margin-bottom: -50px;
+}
 
+.id {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+}
 
+.name-age {
+    display: flex;
+    align-items:baseline;
+}
+
+.name {
+    margin-right: 8.5px;
+}
+
+.age {
+    color: hsl(231, 5%, 52%);
+    font-size: 1.4rem;
+}
+
+.city {
+    color: hsl(231, 5%, 52%);
+    margin-top: 8px;
+}
+
+.stats {
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    justify-content: space-evenly;
+    border-top: .5px solid hsl(228, 13%, 92%);
+    margin-top: 24px;
+}
+
+.stats div {
+    text-align: center;
+}
+
+.stats h2 {
+    color: hsl(229, 23%, 23%);
+}
+
+.stats p {
+    font-size: .9rem;
+    margin-top: 9px;
+    color: hsl(231, 5%, 52%)
+}
 
 /*footer styles*/
 
@@ -57,6 +102,18 @@ body {
 }
 
 
+
+
 /*media*/
 
-@media only screen and (min-width: 276px)
+@media only screen and (min-width: 276px) {
+    .body {
+        background: left -45vw top -50vw no-repeat,
+        right -20vw bottom -35vw no-repeat, hsl(185, 75%, 39%);
+        background-size: 150vw, 130vw;
+    }
+
+    .main {
+        max-width: 350px;
+    }
+}
